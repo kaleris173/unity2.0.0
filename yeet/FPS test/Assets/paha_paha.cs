@@ -8,6 +8,8 @@ public class paha_paha : MonoBehaviour
     private NavMeshAgent agent;
     public GameObject player;
     public float range;
+    string theCollider;
+    public GameObject receiver;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,16 @@ public class paha_paha : MonoBehaviour
         {
 
         agent.SetDestination(player.transform.position);
+        }
+    }
+
+
+    public void OnTriggerEnter(Collider other)
+    {
+        theCollider = other.tag;
+        if (theCollider == "Player")
+        {
+            receiver.SendMessage("DecreaseHealth");
         }
     }
 }
