@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - wall
+  - target
+  - teleport
+  - finish
   layers:
   - Default
   - TransparentFX
