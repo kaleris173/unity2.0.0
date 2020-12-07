@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class player_health : MonoBehaviour
 {
     public int health;
+    public Slider myHealth;
     // Start is called before the first frame update
     void Start()
     {
-        
+        myHealth.value = 10;
     }
 
     // Update is called once per frame
@@ -19,6 +21,7 @@ public class player_health : MonoBehaviour
     public void DecreaseHealth()
     {
         health--;
+        myHealth.value--;
         if (health<= 0)
         {
             Application.LoadLevel(Application.loadedLevel);
